@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  iata: 1
+  month: MyString
+  year: MyString
+  negocio: MyString
+  revenue: MyString
+  cabina: MyString
+  name: MyString
+
+two:
+  iata: 1
+  month: MyString
+  year: MyString
+  negocio: MyString
+  revenue: MyString
+  cabina: MyString
+  name: MyString

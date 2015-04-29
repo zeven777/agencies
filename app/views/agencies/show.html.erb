@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Iata:</strong>
+  <%= @agency.iata %>
+</p>
+
+<p>
+  <strong>Month:</strong>
+  <%= @agency.month %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @agency.year %>
+</p>
+
+<p>
+  <strong>Negocio:</strong>
+  <%= @agency.negocio %>
+</p>
+
+<p>
+  <strong>Revenue:</strong>
+  <%= @agency.revenue %>
+</p>
+
+<p>
+  <strong>Cabina:</strong>
+  <%= @agency.cabina %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @agency.name %>
+</p>
+
+<%= link_to 'Edit', edit_agency_path(@agency) %> |
+<%= link_to 'Back', agencies_path %>

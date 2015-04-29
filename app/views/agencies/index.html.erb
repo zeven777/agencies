@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Agencies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Iata</th>
+      <th>Month</th>
+      <th>Year</th>
+      <th>Negocio</th>
+      <th>Revenue</th>
+      <th>Cabina</th>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @agencies.each do |agency| %>
+      <tr>
+        <td><%= agency.iata %></td>
+        <td><%= agency.month %></td>
+        <td><%= agency.year %></td>
+        <td><%= agency.negocio %></td>
+        <td><%= agency.revenue %></td>
+        <td><%= agency.cabina %></td>
+        <td><%= agency.name %></td>
+        <td><%= link_to 'Show', agency %></td>
+        <td><%= link_to 'Edit', edit_agency_path(agency) %></td>
+        <td><%= link_to 'Destroy', agency, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Agency', new_agency_path %>
