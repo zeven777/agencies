@@ -1,7 +1,27 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+Agency.create!([
+  {iata: 111111, month: "Jan", year: "LY", negocio: "LH", revenue: "1547364", cabina: "Economy", name: "Test Agency"},
+  {iata: 11111111, month: "Jan", year: "AY", negocio: "LH", revenue: "1,547,364", cabina: "Economy", name: "Test Agency"},
+  {iata: 11111111, month: "Jan", year: "AY", negocio: "DOM", revenue: "67,277", cabina: "Economy", name: "Test Agency"},
+  {iata: 11111111, month: "Jan", year: "AY", negocio: "REG", revenue: "33,638", cabina: "Economy", name: "Test Agency"},
+  {iata: 11111111, month: "Jan", year: "AY", negocio: "OTHERS", revenue: "33,638", cabina: "Economy", name: "Test Agency"},
+  {iata: 11111111, month: "Feb", year: "AY", negocio: "LH", revenue: "757,854", cabina: "Economy", name: "Test Agency"},
+  {iata: 11111111, month: "Feb", year: "AY", negocio: "DOM", revenue: "32,950", cabina: "Economy", name: "Test Agency"},
+  {iata: 11111111, month: "Feb", year: "AY", negocio: "REG", revenue: "16,475", cabina: "Economy", name: "Test Agency"},
+  {iata: 11111111, month: "Feb", year: "AY", negocio: "OTHERS", revenue: "16,475", cabina: "Economy", name: "Test Agency"},
+  {iata: 11111111, month: "Mar", year: "AY", negocio: "LH", revenue: "961,697", cabina: "Economy", name: "Test Agency"},
+  {iata: 11111111, month: "Mar", year: "AY", negocio: "DOM", revenue: "41,813", cabina: "Economy", name: "Test Agency"},
+  {iata: 11111111, month: "Mar", year: "AY", negocio: "REG", revenue: "20,906", cabina: "Economy", name: "Test Agency"},
+  {iata: 11111111, month: "Mar", year: "AY", negocio: "OTHERS", revenue: "20,906", cabina: "Economy", name: "Test Agency"},
+  {iata: 11111111, month: "Jan", year: "AY", negocio: "LH", revenue: "202,061", cabina: "Premium", name: "Test Agency"},
+  {iata: 11111111, month: "Jan", year: "AY", negocio: "DOM", revenue: "8,785", cabina: "Premium", name: "Test Agency"},
+  {iata: 11111111, month: "Jan", year: "AY", negocio: "REG", revenue: "4,393", cabina: "Premium", name: "Test Agency"},
+  {iata: 11111111, month: "Jan", year: "AY", negocio: "OTHERS", revenue: "4,393", cabina: "Premium", name: "Test Agency"},
+  {iata: 11111111, month: "Feb", year: "AY", negocio: "LH", revenue: "193,178", cabina: "Premium", name: "Test Agency"},
+  {iata: 11111111, month: "Feb", year: "AY", negocio: "DOM", revenue: "8,399", cabina: "Premium", name: "Test Agency"},
+  {iata: 11111111, month: "Feb", year: "AY", negocio: "REG", revenue: "4,200", cabina: "Premium", name: "Test Agency"},
+  {iata: 11111111, month: "Feb", year: "AY", negocio: "OTHERS", revenue: "4,200", cabina: "Premium", name: "Test Agency"},
+  {iata: 11111111, month: "Mar", year: "AY", negocio: "LH", revenue: "242,936", cabina: "Premium", name: "Test Agency"},
+  {iata: 11111111, month: "Mar", year: "AY", negocio: "DOM", revenue: "10,562", cabina: "Premium", name: "Test Agency"},
+  {iata: 11111111, month: "Mar", year: "AY", negocio: "REG", revenue: "5,281", cabina: "Premium", name: "Test Agency"},
+  {iata: 11111111, month: "Mar", year: "AY", negocio: "OTHERS", revenue: "5,281", cabina: "Premium", name: "Test Agency"}
+])
