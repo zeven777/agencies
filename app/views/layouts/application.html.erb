@@ -8,8 +8,8 @@
   <script>
     var app = angular.module('myApp', []);
     app.controller('customersCtrl', function($scope, $http) {
-      $http.get("https://stormy-castle-4138.herokuapp.com/agencies")
-      .success(function (response) {$scope.names = response.records;});
+      $http.get("https://stormy-castle-4138.herokuapp.com/agencies.json")
+      .success(function (response) {$scope.months = response;});
     });
   </script>
   <%= csrf_meta_tags %>
