@@ -8,7 +8,7 @@
   <script>
     var app = angular.module('myApp', []);
     app.controller('customersCtrl', function($scope, $http) {
-      $http.get("https://stormy-castle-4138.herokuapp.com/agencies.json")
+      $http.get("https://stormy-castle-4138.herokuapp.com/agencies")
       .success(function (response) {$scope.names = response.records;});
     });
   </script>
