@@ -11,6 +11,8 @@
       $http.get("https://stormy-castle-4138.herokuapp.com/agencies.json")
       .success(function (response) {$scope.months = response;});
 
+      var $scope.datos = $scope.months.month[1];
+
     });
   </script>
   <%= csrf_meta_tags %>
