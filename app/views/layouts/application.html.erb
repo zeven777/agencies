@@ -8,6 +8,7 @@
   <script>
   var app = angular.module('myApp', []);
   var myArreglo = new Array();
+  var datos = new Array();
   app.controller('AgencyController', function($scope, $http) {
   	$http.get("https://stormy-castle-4138.herokuapp.com/agencies.json").
   		success(function (response) {
@@ -21,7 +22,11 @@
         console.log(myArreglo[2]);
   		});
 
-      console.log(myArreglo);
+      for(var i=0; i <= myArreglo.length; i++){
+        datos[i] = myArreglo[i];
+        console.log(datos[i]);
+      }
+
   });
   </script>
   <%= csrf_meta_tags %>
