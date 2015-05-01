@@ -13,7 +13,7 @@
         success(function (response) {
           $scope.months = response;
           $scope.mensaje = response;
-          myObjeto = response;
+          myObjeto = response.slice();
         });
 
       console.log(myObjeto);
