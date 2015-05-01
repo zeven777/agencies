@@ -1,13 +1,12 @@
 @font-face{
   font-family:Zwo-Alt-LF-w-3;
   src: url('Zwo-Alt-LF-w-3.otf');
-
-
 }
 
-body, a
-{
- font-family:Zwo-Alt-LF-w-3;
+body{
+  a{
+    font-family:Zwo-Alt-LF-w-3;
+  }
 }
 
 p {
@@ -48,22 +47,23 @@ p {
 }
 .pietext{
   text-align: center;
-}
-.pietext h2{
-  color: #bb282e;
-  font-size: 2em;
-  margin: 0;
-}
-.pietext h4{
-  margin: 5px 0;
+  h2{
+    color: #bb282e;
+    font-size: 2em;
+    margin: 0;
+  }
+  h4{
+    margin: 5px 0;
+  }
 }
 
-.amcharts-chart-div {
-  display:
+.amcharts-chart-div{
+  a{
+    display: none !important;
+  }
 }
-.amcharts-chart-div a{
-  display: none !important;
-}
+
+
 .tagPie{
   position: absolute;
   left: 228px;
@@ -71,22 +71,23 @@ p {
   height: 120px;
   width: 130px;
   text-align: center;
-}
-.tagPie h2{
-  margin: 0;
-  font-size: 2em;
-}
-.tagPie h3{
-  margin: 1px 0;
-  font-size: 1.8em;
-}
-.tagPie h4{
-  margin: 1px 0;
 
+  h5{
+     margin: 10px 0 0 0;
+  }
+  h4{
+    margin: 1px 0;
+  }
+  h3{
+    margin: 1px 0;
+    font-size: 1.8em;
+  }
+  h2{
+    margin: 0;
+    font-size: 2em;
+  }
 }
-.tagPie h5{
-  margin: 10px 0 0 0;
-}
+
 .blueColor{
   color: #003d7d;
 }
@@ -103,22 +104,20 @@ thead {
 .tTop {
   text-align: center;
 }
-tr th{
-  padding: 0 8px !important;
+tr{
+  th{
+    padding: 0 8px !important;
+  }
 }
 
 .content {
   text-align: center;
 }
 
-[contenteditable="true"] {
-	padding: 1px;
-	outline: 0;
-}
-[contenteditable="true"]:hover {
-	background-color: #FF9;
-  	border: 1px dashed #aaa;
-}
 .colGr{
   background-color: #f0f0f0;
 }
+
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
