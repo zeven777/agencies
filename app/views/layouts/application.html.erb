@@ -14,18 +14,16 @@
   		success(function (response) {
   			$scope.months = response;
   			$scope.mensaje = response;
+        datos = response.slice();
 
   			for(var i=0; i < response.length; i++){
   				myArreglo[i] = response[i];
   				//console.log(response[i]);
   			}
-        console.log(myArreglo[2]);
+        console.log(datos);
   		});
 
-      for(var i=0; i <= myArreglo.length; i++){
-        datos[i] = myArreglo[i];
-        console.log(datos[i]);
-      }
+        console.log(datos);
 
   });
   </script>
