@@ -13,5 +13,6 @@ app.controller('AgencyController', function($scope, $http) {
 		});
 
 	console.log(myArreglo);
+	$scope.datos = myArreglo[2];
 
 });
