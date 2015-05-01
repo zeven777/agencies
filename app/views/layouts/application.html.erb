@@ -10,41 +10,21 @@
   var myArreglo = new Array();
   var datos = new Array();
 
+  app.controller('AgencyController', function($scope, $http) {
+  	$http.get("https://stormy-castle-4138.herokuapp.com/agencies.json").
+  		success(function (response) {
+  			$scope.months = response;
+  			$scope.mensaje = response;
 
-  function dataService ($http, $q) {
-    return {
-        getAll: getAll
-    }
+  			for(var i=0; i < response.length; i++){
+  				myArreglo[i] = response[i];
+  				//console.log(response[i]);
+  			}
+        console.log(myArreglo[2]);
+  		});
 
-    function getAll () {
-        var defered = $q.defer();
-        var promise = defered.promise;
 
-        $http.get("https://stormy-castle-4138.herokuapp.com/agencies.json")
-            .success(function(response) {
-                defered.resolve(response);
-            })
-            .error(function(err) {
-                defered.reject(err)
-            });
-
-        return promise;
-    }
-  }
-
-  app.controller("AgencyController", ["$scope", function(dataService){
-  //function AgencyController (dataService) {
-    dataService
-        .getAll()
-        .then(function(response) {
-            $scope.months = response;
-            console.log(response);
-        })
-        .catch(function(err) {
-            // Tratar el error
-        });
-    
-  }]);
+  });
 
   </script>
   <%= csrf_meta_tags %>
