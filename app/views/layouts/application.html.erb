@@ -32,17 +32,19 @@
     }
   }
 
-  function AgencyController (dataService) {
+  app.controller("AgencyController", ["$scope", function(dataService){
+  //function AgencyController (dataService) {
     dataService
         .getAll()
         .then(function(response) {
             $scope.months = response;
-            console.log(datos);
+            console.log(response);
         })
         .catch(function(err) {
             // Tratar el error
         });
-  }
+    
+  }]);
 
   </script>
   <%= csrf_meta_tags %>
