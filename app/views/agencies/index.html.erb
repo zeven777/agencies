@@ -1,51 +1,246 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Agency name</h1>
-
-
-<table>
-  <thead>
-    <tr>
-      <th>Iata</th>
-      <th>Month</th>
-      <th>Year</th>
-      <th>Negocio</th>
-      <th>Revenue</th>
-      <th>Cabina</th>
-      <th>Name</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @agencies.each do |agency| %>
-      <tr>
-        <td><%= agency.iata %></td>
-        <td><%= agency.month %></td>
-        <td><%= agency.year %></td>
-        <td><%= agency.negocio %></td>
-        <td><%= agency.revenue %></td>
-        <td><%= agency.cabina %></td>
-        <td><%= agency.name %></td>
-        <td><%= link_to 'Show', agency %></td>
-        <td><%= link_to 'Edit', edit_agency_path(agency) %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
 
 <h2>Listado json</h2>
-<div ng-app="myApp" ng-controller="AgencyController">
-  <ul>
-    <li ng-repeat="x in months">
-      {{ x.month }}
-    </li>
-  </ul>
+
+<div class="container" ng-app="myApp" ng-controller="AgencyController">
   <input type="button" class="btn btn-primary" value="Pedir el Mensaje" ng-click="pedirValor()"/>
   <h2>Aquí va el: {{mundo}}</h2>
   <h2>{{mensaje}}</h2>
-</div>
 
-<!-- <%= link_to 'New Agency', new_agency_path %> -->
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th class="tTop">Months</th>
+        <th class="tTop">2014</th>
+        <th class="tTop">2015</th>
+        <th class="tTop"><>(US$)</th>
+        <th class="tTop">r'LY</th>
+        <th class="tTop">Goal</th>
+        <th class="tTop"><>Goal</th>
+        <th class="tTop">LH</th>
+        <th class="tTop">r'LY</th>
+        <th class="tTop">REG</th>
+        <th class="tTop">r'LY</th>
+        <th class="tTop">DOM</th>
+        <th class="tTop">r'LY</th>
+        <th class="tTop">Other</th>
+        <th class="tTop">r'LY</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Jan</th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+      </tr>
+
+      <tr>
+        <th scope="row">Feb</th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+      </tr>
+
+      <tr>
+        <th scope="row">Mar</th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+      </tr>
+
+      <tr>
+        <th scope="row">Apr</th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+      </tr>
+
+      <tr>
+        <th scope="row">May</th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+      </tr>
+
+      <tr>
+        <th scope="row">June</th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+      </tr>
+
+      <tr>
+        <th scope="row">Jul</th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+      </tr>
+
+      <tr>
+        <th scope="row">Aug</th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+      </tr>
+
+      <tr>
+        <th scope="row">Sep</th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+      </tr>
+
+      <tr>
+        <th scope="row">Oct</th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+      </tr>
+
+      <tr>
+        <th scope="row">Nov</th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+      </tr>
+
+      <tr>
+        <th scope="row">Dec</th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+        <th><p class="content" contenteditable="true"> </p></th>
+        <th class="colGr"><p class="content" contenteditable="true"> </p></th>
+      </tr>
+    </tbody>
+  </table>
