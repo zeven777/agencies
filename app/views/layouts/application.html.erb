@@ -8,8 +8,8 @@
   <script>
     var app = angular.module('myApp', []);
     app.controller('AgencyController', function($scope, $http) {
-      $http.get("https://stormy-castle-4138.herokuapp.com/agencies.json")
-      .success(function (response) {$scope.months = response;});
+      $http.get("https://stormy-castle-4138.herokuapp.com/agencies.json").success(function (response) {$scope.months = response;});
+      
 
     });
   </script>
