@@ -1,5 +1,6 @@
 var app = angular.module('myApp', []);
 var myArreglo = new Array();
+var datos;
 app.controller('AgencyController', function($scope, $http) {
 	$http.get("https://stormy-castle-4138.herokuapp.com/agencies.json").
 		success(function (response) {
