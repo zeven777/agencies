@@ -16,7 +16,6 @@
   var myArreglo = new Array();
   var datos = new Array();
   var iataCount = new Array();
-  var showAgency = new Array();
 
   app.controller('AgencyController', function($scope, $http) {
   	$http.get("https://stormy-castle-4138.herokuapp.com/agencies.json").
@@ -46,13 +45,14 @@
         $scope.linkAgency = iataCount.slice();
 
         function cargaAgencia(valor){
+          var showAgency = new Array();
           $scope.mundo = valor;
-          console.log(response.length);
 
           var k = 0;
           for(i=0; i<= response.length; i++){
             if (valor == response[i]) {
               showAgency[k] = response[i];
+              console.log(response[i]);
               k++;
             }
           }
