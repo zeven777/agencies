@@ -53,19 +53,18 @@
           var k = 0;
           var valida ="";
           var myObjeto = {};
-          myObjeto = dataChart[1];
-          for(i=0; i<= dataChart.length; i++){
-            /*
-            myObjeto = dataChart[i];
 
-            console.log(dataChart[i]['iata']);
+          for(i=0; i<= dataChart.length; i++){
+
+            myObjeto = dataChart[i];
+            valida = myObjeto['iata'];
+
             if (valor == valida) {
               showAgency[k] = dataChart[i];
               k++;
             }
-            */
           }
-          console.log(myObjeto['iata']);
+          console.log(showAgency);
         }
 
         $scope.pedirValor = function(valor){
