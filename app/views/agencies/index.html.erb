@@ -5,6 +5,13 @@
   <input type="button" class="btn btn-primary" value="Pedir el Mensaje" ng-click="pedirValor()"/>
   <h2>Aquí va el: {{mundo}}</h2>
   <p>{{mensaje}}</p>
+  <br>
+  <h3>Agency list</h3>
+  <ul>
+    <li ng-repeat="x	in iataCount">
+      {{ x }}
+    </li>
+  </ul>
 
   <table class="table table-bordered">
     <thead>
