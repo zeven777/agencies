@@ -9,9 +9,11 @@
   <h3>Agency list</h3>
   <ul>
     <li ng-repeat="x in linkAgency track by $index">
-      {{x}}
+      <button ng-click="count = '{{x}}'">Click Me! {{x}}</button>
     </li>
   </ul>
+
+  <p>{{ count }}</p>
 
   <table class="table table-bordered">
     <thead>
