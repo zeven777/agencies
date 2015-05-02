@@ -23,7 +23,7 @@
   			$scope.months = response;
   			$scope.mensaje = response;
         $scope.mundo ="_";
-        $scope.count = "";
+
 
 
         var iataCompare = response[0].iata;
@@ -44,8 +44,8 @@
         console.log(iataCount);
         $scope.linkAgency = iataCount.slice();
 
-        $scope.pedirValor = function(){
-          $scope.mundo = "Hola mundo";
+        $scope.pedirValor = function(valor){
+          $scope.mundo = valor;
         }
 
   		});

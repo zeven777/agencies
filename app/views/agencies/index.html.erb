@@ -2,18 +2,17 @@
 <h2>Listado json</h2>
 
 <div class="container" ng-app="myApp" ng-controller="AgencyController">
-  <input type="button" class="btn btn-primary" value="Pedir el Mensaje" ng-click="pedirValor()"/>
-  <h2>Aquí va el: {{mundo}}</h2>
   <p>{{mensaje}}</p>
   <br>
   <h3>Agency list</h3>
   <ul>
     <li ng-repeat="x in linkAgency track by $index">
-      <button ng-click="count = '{{x}}'">Click Me! {{x}}</button>
+      <a href="{{x}}">Agency:{{x}}</a>
+      <input type="button" class="btn btn-primary" value="Pedir el Mensaje" ng-click="pedirValor(x)"/>
     </li>
   </ul>
 
-  <p>{{ count }}</p>
+  <h2>Aquí va el: {{mundo}}</h2>
 
   <table class="table table-bordered">
     <thead>
