@@ -49,8 +49,12 @@
           $scope.mundo = valor;
 
           var k = 0;
+          var valida ="";
           for(i=0; i<= response.length; i++){
-            if (valor == response[i].iata) {
+            valida = response[i].iata;
+            console.log(valida);
+
+            if (valor == valida) {
               showAgency[k] = response[i];
               console.log(response[i]);
               k++;
