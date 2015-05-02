@@ -35,12 +35,13 @@
 
           if(iataCompare != response[i].iata){
             iataCompare = response[i].iata;
-            $scope.iataCount[t] = response[i].iata;
+            iataCount[t] = response[i].iata;
             t++;
           }
   			}
 
         console.log(iataCount);
+        $scope.linkAgency = iataCount.slice();
 
         $scope.pedirValor = function(){
           $scope.mundo = "Hola mundo";
