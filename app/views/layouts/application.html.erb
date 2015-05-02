@@ -23,13 +23,11 @@
   			$scope.months = response;
   			$scope.mensaje = response;
         $scope.mundo ="_";
-        $scope.iataCount = [1,6,9];
-        console.log(iataCount);
 
 
         var iataCompare = response[0].iata;
         var t = 1;
-        iataCount[0] = response[0].iata;
+        $scope.iataCount[0] = response[0].iata;
 
   			for(var i=0; i < response.length; i++){
   				myArreglo[i] = response[i];
@@ -37,17 +35,12 @@
 
           if(iataCompare != response[i].iata){
             iataCompare = response[i].iata;
-            iataCount[t] = response[i].iata;
+            $scope.iataCount[t] = response[i].iata;
             t++;
           }
   			}
 
-
-
         console.log(iataCount);
-        $scope.iataCount;
-
-
 
         $scope.pedirValor = function(){
           $scope.mundo = "Hola mundo";
