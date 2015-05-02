@@ -48,21 +48,19 @@
         function cargaAgencia(valor){
           var showAgency = new Array();
           dataChart = response.slice();
-          console.log(dataChart[1].iata);
           $scope.mundo = valor;
 
-          /*
           var k = 0;
           var valida ="";
-          for(i=0; i<= response.length; i++){
-            valida = response[i].iata;
+          for(i=0; i<= dataChart.length; i++){
+            valida = dataChart[i].iata;
 
             if (valor == valida) {
-              showAgency[k] = response[i];
+              showAgency[k] = dataChart[i];
               k++;
             }
           }
-          console.log(showAgency);*/
+          console.log(showAgency);
         }
 
         $scope.pedirValor = function(valor){
