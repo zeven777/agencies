@@ -24,9 +24,20 @@
   			$scope.mensaje = response;
         $scope.mundo ="_";
 
+
+        var iataCompare = response[0].iata;
+        var t = 1;
+        iataCount[0] = response[0];
+
   			for(var i=0; i < response.length; i++){
   				myArreglo[i] = response[i];
   				console.log(response[i].iata);
+
+          if(iataCompare != response[i].iata){
+            iataCompare = response[i].iata;
+            iataCount[t] = response[i].iata;
+            t++;
+          }
   			}
 
 
