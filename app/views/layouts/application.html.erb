@@ -45,9 +45,9 @@
         //console.log(iataCount);
         $scope.linkAgency = iataCount.slice();
 
-        $scope.pedirValor = function(valor){
+        $scope.pedirValor = function(valor, response){
           $scope.mundo = valor;
-          console.log(valor);
+          console.log(response);
           var k = 0;
           for(i=0; i<= response.length; i++){
             if (valor == response[i]) {
