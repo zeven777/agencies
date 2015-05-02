@@ -52,16 +52,20 @@
 
           var k = 0;
           var valida ="";
+          var myObjeto = {};
+          myObjeto = dataChart[1];
           for(i=0; i<= dataChart.length; i++){
-            console.log(dataChart[i]['iata']);
             /*
+            myObjeto = dataChart[i];
+
+            console.log(dataChart[i]['iata']);
             if (valor == valida) {
               showAgency[k] = dataChart[i];
               k++;
             }
             */
           }
-          //console.log(showAgency);
+          console.log(myObjeto);
         }
 
         $scope.pedirValor = function(valor){
