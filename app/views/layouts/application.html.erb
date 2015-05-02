@@ -15,6 +15,7 @@
   var app = angular.module('myApp', []);
   var myArreglo = new Array();
   var datos = new Array();
+  var iataCount = new Array();
 
   app.controller('AgencyController', function($scope, $http) {
   	$http.get("https://stormy-castle-4138.herokuapp.com/agencies.json").
@@ -27,7 +28,22 @@
   				myArreglo[i] = response[i];
   				//console.log(response[i]);
   			}
-        console.log(myArreglo[2].revenue);
+
+        var iataCompare = myArreglo[0].iata;
+        var t = 1;
+        iataCount[0] = myArreglo[0];
+        for(var i=0; i<=myArreglo.length; i++ ){
+          if (iataCompare == myArreglo[i].iata) {
+            //Sepuede usar para cargar vectores
+          } else {
+            iataCount[t] = myArreglo[i].iata;
+            t++;
+          }
+        }
+
+        console.log(iataCount);
+
+        
 
         $scope.pedirValor = function(){
           $scope.mundo = "Hola mundo";
