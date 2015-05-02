@@ -26,24 +26,14 @@
 
   			for(var i=0; i < response.length; i++){
   				myArreglo[i] = response[i];
-  				//console.log(response[i]);
+  				console.log(response[i].iata);
   			}
 
-        var iataCompare = myArreglo[0].iata;
-        var t = 1;
-        iataCount[0] = myArreglo[0];
-        for(var i=0; i<=myArreglo.length; i++ ){
-          if (iataCompare == myArreglo[i].iata) {
-            //Sepuede usar para cargar vectores
-          } else {
-            iataCount[t] = myArreglo[i].iata;
-            t++;
-          }
-        }
 
-        console.log(iataCount);
 
-        
+        console.log(myArreglo);
+
+
 
         $scope.pedirValor = function(){
           $scope.mundo = "Hola mundo";
