@@ -52,11 +52,9 @@
           var valida ="";
           for(i=0; i<= response.length; i++){
             valida = response[i].iata;
-            console.log(valida);
 
             if (valor == valida) {
               showAgency[k] = response[i];
-              console.log(response[i]);
               k++;
             }
           }
