@@ -47,7 +47,8 @@
 
         function cargaAgencia(valor){
           $scope.mundo = valor;
-          console.log(response);
+          console.log(response.length);
+
           var k = 0;
           for(i=0; i<= response.length; i++){
             if (valor == response[i]) {
@@ -55,6 +56,7 @@
               k++;
             }
           }
+          console.log(showAgency);
         }
 
         $scope.pedirValor = function(valor){
