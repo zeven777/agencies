@@ -57,7 +57,8 @@
           for(i=0; i<= dataChart.length; i++){
 
             myObjeto = dataChart[i];
-            valida = myObjeto['iata'];
+            console.log(myObjeto);
+            valida = myObjeto.iata;
 
             if (valor == valida) {
               showAgency[k] = dataChart[i];
