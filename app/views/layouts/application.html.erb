@@ -19,6 +19,7 @@
   var iataCount = new Array();
   var vectorIata = new Array();
 
+
   app.controller("AgencyController", function($http, $scope, $q, $log){
   	var defered = $q.defer();
     var promise = defered.promise;
@@ -58,29 +59,32 @@
       //console.log(iataCount);
       $scope.linkAgency = iataCount.slice();
 
-      function cargaAgencia(valor){
+      function cargaAgencia(valor, datos){
         var showAgency = new Array();
         $scope.mundo = valor;
 
         var k = 0;
 
-        for(i=0; i<= data.length; i++){
+        for(i=0; i<= datos.length; i++){
 
           if (valor == vectorIata[i]) {
-            showAgency[k] = data[i];
+            showAgency[k] = datos[i];
             k++;
           }
         }
 
-      for(var i=0; i<=showAgency.length; i++){
-        var veo = showAgency[i].iata;
-        $log.log(veo);
-      }
+        /*
+        for(var i=0; i<=showAgency.length; i++){
+          $log.log(showAgency[i].iata);
+        }
+        */
 
     }
 
     $scope.pedirValor = function(valor){
-      cargaAgencia(valor);
+      datos = data.slice();
+      $log.log(datos);
+      cargaAgencia(valor, datos);
     }
 
 
