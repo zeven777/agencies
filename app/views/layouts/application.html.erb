@@ -12,83 +12,83 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/amcharts/3.13.0/pie.js"></script>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <script>
-  var app = angular.module('myApp', []);
+
+  var app = angular.module("myApp", []);
+
   var myArreglo = new Array();
   var datos = new Array();
   var iataCount = new Array();
   var dataChart = new Array();
   var vectorIata = new Array();
-  var fanObjeto = {};
-  var coolArray = new Array();
 
-  app.controller('AgencyController', function($scope, $http) {
-  	$http.get("https://stormy-castle-4138.herokuapp.com/agencies.json").
-  		success(function (response) {
-  			$scope.months = response;
-  			$scope.mensaje = response;
-        $scope.mundo ="_";
+  app.controller("AppController", function($http, $scope, $q, $log){
+  	var defered = $q.defer();
+    var promise = defered.promise;
 
+    $http.get('https://stormy-castle-4138.herokuapp.com/agencies.json')
+      .success(function(data) {
+        defered.resolve(data);
+  		})
+  		.error(function(err) {
+        defered.reject(err)
+      });
 
-        var iataCompare = response[0].iata;
-        var t = 1;
-        iataCount[0] = response[0].iata;
+    // +++++++++++++++++++  START FUNCTION AFTER LOAD JSON +++++++++++++++++++++++++++++++
 
-  			for(var i=0; i < response.length; i++){
-          fanObjeto = {
-            id: response.id,
-            iata: response.iata,
-            month:response.month,
-            year:response.year,
-            negocio:response.negocio,
-            revenue:response.revenue,
-            cabina:response.cabina,
-            name:response.name
-          };
+   	defered.promise.then(function(data){
+   		$log.log("Promesa cumplida");
 
-          coolArray[i] = fanObjeto;
+   		$scope.months = data;
+    	$scope.mensaje = data;
+      $scope.mundo ="_";
 
-          vectorIata[i] = response[i].iata;
-  				myArreglo[i] = response[i];
-  				//console.log(response[i].iata);
+      var iataCompare = data[0].iata;
+      var t = 1;
+      iataCount[0] = data[0].iata;
 
-          if(iataCompare != response[i].iata){
-            iataCompare = response[i].iata;
-            iataCount[t] = response[i].iata;
-            t++;
-          }
-  			}
+  		for(var i=0; i < data.length; i++){
 
-        //console.log(iataCount);
-        $scope.linkAgency = iataCount.slice();
+        vectorIata[i] = data[i].iata;
+				myArreglo[i] = data[i];
 
-        function cargaAgencia(valor){
-          var showAgency = new Array();
-          dataChart = response.slice();
-          $scope.mundo = valor;
-
-          var k = 0;
-
-          for(i=0; i<= dataChart.length; i++){
-
-            if (valor == vectorIata[i]) {
-              showAgency[k] = dataChart[i];
-              k++;
-            }
-          }
-
-
-          console.log(coolArray);
-
+        if(iataCompare != data[i].iata){
+          iataCompare = data[i].iata;
+          iataCount[t] = data[i].iata;
+          t++;
         }
+    	}
 
-        $scope.pedirValor = function(valor){
-          cargaAgencia(valor);
+      //console.log(iataCount);
+      $scope.linkAgency = iataCount.slice();
+
+      function cargaAgencia(valor){
+        var showAgency = new Array();
+        dataChart = data.slice();
+        $scope.mundo = valor;
+
+      var k = 0;
+
+      for(i=0; i<= dataChart.length; i++){
+
+        if (valor == vectorIata[i]) {
+          showAgency[k] = dataChart[i];
+          k++;
         }
+      }
 
-  		});
+      console.log(showAgency);
+
+    }
+
+    $scope.pedirValor = function(valor){
+      cargaAgencia(valor);
+    }
+
+
   });
 
-  </script>
+});
+</script>
   <%= csrf_meta_tags %>
 </head>
 <body>
