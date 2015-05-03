@@ -154,6 +154,10 @@
           greyResult = 100 - (parseInt(pies[1]) + parseInt(pies[2]));
           */
 
+          $scope.goalPieTotal = 100000;
+          $scope.goalPieSale = 28600;
+          $scope.goalPie = 30000;
+
           AmCharts.makeChart("chartpies",
           {
             "type": "pie",
@@ -180,16 +184,16 @@
             "titles": [],
             "dataProvider": [
               {
-                "country": "ValueBlue",
-                "litres": "PorcenBlue %"
+                "country": 28600,
+                "litres": 28
               },
               {
-                "country": "ValueRed",
-                "litres": "PorcenRed"
+                "country": 30000,
+                "litres": 30
               },
               {
-                "country": "ValueGrey",
-                "litres": "PorcenGrey %"
+                "country": 60,
+                "litres": 60
               }
             ]
           });
