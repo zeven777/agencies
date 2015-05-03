@@ -17,7 +17,7 @@
   var datos = new Array();
   var iataCount = new Array();
   var dataChart = new Array();
-  var myObjeto = {};
+  var myObjeto = new Object();
 
   app.controller('AgencyController', function($scope, $http) {
   	$http.get("https://stormy-castle-4138.herokuapp.com/agencies.json").
@@ -34,7 +34,7 @@
         iataCount[0] = response[0].iata;
 
   			for(var i=0; i < response.length; i++){
-          myObjeto = response[i];
+          myObjeto = myArreglo + response[i];
   				myArreglo[i] = response[i];
   				//console.log(response[i].iata);
 
