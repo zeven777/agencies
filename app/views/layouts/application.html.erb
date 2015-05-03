@@ -95,6 +95,7 @@
 
         if(showAgency.length < 24){
           for(var i=1+showAgency.length; i < 25; i++){
+            objEmpty.iata = showAgency[0];
             showAgency[i] = objEmpty;
           }
         }
