@@ -19,6 +19,7 @@
   var iataCount = new Array();
   var vectorIata = new Array();
   var myObjeto = {};
+  const regCount = 25;
 
 
   app.controller("AgencyController", function($http, $scope, $q, $log){
@@ -84,9 +85,9 @@
 
         // SET EMPTY VALUES VECTOR ###########################
 
-        if(showAgency.length < 25){
+        if(showAgency.length < regCount){
 
-          for(var i=showAgency.length; i < 25; i++){
+          for(var i=showAgency.length; i < regCount; i++){
             showAgency[i] = showAgency[0];
             showAgency[i].id = 0;
             showAgency[i].month = "";
@@ -97,7 +98,7 @@
           }
         }
 
-        for(var i=0; i < 25; i++){
+        for(var i=0; i < regCount; i++){
           $log.log(showAgency[i].iata);
         }
 
