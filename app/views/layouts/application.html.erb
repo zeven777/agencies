@@ -82,10 +82,12 @@
 
         var listAgency = new Array();
 
-        for(var i=0; i<=showAgency.length; i++){
+        var x = 0;
+        while (x < 25)
           myObjeto = showAgency[i];
           listAgency[i] = myObjeto;
           $log.log(listAgency[i].iata);
+          x++;
         }
 
 
