@@ -96,13 +96,12 @@
         if(showAgency.length < 24){
           for(var i=1+showAgency.length; i < 25; i++){
             showAgency[i] = objEmpty;
-            $log.log("En el For:" + showAgency[i]);
           }
         }
 
-
-        $log.log(showAgency);
-
+        for(var i=0; i < 25; i++){
+          $log.log(showAgency[i].iata);
+        }
 
 
     }
