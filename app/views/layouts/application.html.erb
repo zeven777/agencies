@@ -79,7 +79,6 @@
 
    		$scope.months = data;
     	$scope.mensaje = data;
-      $scope.mundo ="_";
 
       var iataCompare = data[0].iata;
       var t = 1;
@@ -100,8 +99,6 @@
 
       function cargaAgencia(valor, datos){
         var showAgency = new Array();
-        $scope.mundo = valor;
-
         var k = 0;
 
         for(i=0; i<= datos.length; i++){
@@ -111,6 +108,7 @@
             k++;
           }
         }
+        $log.log("Iata Agency:" + valor);
 
 
 

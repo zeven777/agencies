@@ -5,6 +5,13 @@
   <p>{{mensaje}}</p>
   <br>
 
+  <h3>Agency list</h3>
+  <div class="container-fluid">
+    <form class="form-inline">
+      <input ng-repeat="x in linkAgency track by $index" type="button" class="btn btn-primary btMar" value="{{x}}" ng-click="pedirValor(x)"/>
+    </form>
+  </div>
+
 
   <!-- +++++++++++++++ Start display chart +++++++++++++++ -->
 
@@ -38,16 +45,6 @@
   </div>
   <!-- +++++++++++++++++++++++++++++ -->
 
-
-
-  <h3>Agency list</h3>
-  <div class="container-fluid">
-    <form class="form-inline">
-      <input ng-repeat="x in linkAgency track by $index" type="button" class="btn btn-primary btMar" value="{{x}}" ng-click="pedirValor(x)"/>
-    </form>
-  </div>
-
-  <h2>Aquí va el: {{mundo}}</h2>
 
   <table class="table table-bordered">
     <thead>
