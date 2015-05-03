@@ -41,8 +41,10 @@
 
 
   <h3>Agency list</h3>
-  <div class="bs-example" data-example-id="btn-variants">
-    <button ng-repeat="x in linkAgency track by $index" type="button" class="btn btn-default" ng-click="pedirValor(x)">{{x}}</button>
+  <div class="container-fluid">
+    <form class="form-inline">
+      <input ng-repeat="x in linkAgency track by $index" type="button" class="btn btn-primary" value="{{x}}" ng-click="pedirValor(x)"/>
+    </form>
   </div>
 
   <h2>Aquí va el: {{mundo}}</h2>
