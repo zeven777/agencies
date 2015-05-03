@@ -17,6 +17,7 @@
 
   var datos = new Array();
   var iataCount = new Array();
+  var vectorIata = new Array();
 
   app.controller("AgencyController", function($http, $scope, $q, $log){
   	var defered = $q.defer();
@@ -45,6 +46,7 @@
 
   		for(var i=0; i < data.length; i++){
 
+        vectorIata[i] = data[i].iata;
 
         if(iataCompare != data[i].iata){
           iataCompare = data[i].iata;
@@ -64,13 +66,11 @@
 
         for(i=0; i<= data.length; i++){
 
-          if (valor == data[i].iata) {
+          if (valor == vectorIata[i]) {
             showAgency[k] = data[i];
             k++;
           }
         }
-
-
 
       for(var i=0; i<=showAgency.length; i++){
         console.log(showAgency[i].iata);
