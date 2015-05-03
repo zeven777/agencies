@@ -59,6 +59,15 @@
       //console.log(iataCount);
       $scope.linkAgency = iataCount.slice();
 
+
+
+
+    }
+
+    $scope.pedirValor = function(valor){
+      datos = data.slice();
+      cargaAgencia(valor, datos);
+
       function cargaAgencia(valor, datos){
         var showAgency = new Array();
         $scope.mundo = valor;
@@ -79,13 +88,6 @@
           veo = showAgency[i].iata;
           $log.log(veo);
         }
-
-
-    }
-
-    $scope.pedirValor = function(valor){
-      datos = data.slice();
-      cargaAgencia(valor, datos);
     }
 
 
