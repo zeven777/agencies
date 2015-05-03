@@ -84,10 +84,9 @@
 
         // SET EMPTY VALUES VECTOR ###########################
 
-        var veoArray = new Array();
         if(showAgency.length < 25){
 
-          for(var i=1+showAgency.length; i < 25; i++){
+          for(var i=showAgency.length; i < 25; i++){
             showAgency[i] = showAgency[0];
             showAgency[i].id = 0;
             showAgency[i].month = "";
@@ -96,12 +95,10 @@
             showAgency[i].cabina = "";
             showAgency[i].name = "";
           }
-          veoArray = showAgency.slice();
-
         }
 
         //for(var i=0; i < 25; i++){
-        $log.log(veoArray);
+        $log.log(showAgency);
         //}
 
     }
