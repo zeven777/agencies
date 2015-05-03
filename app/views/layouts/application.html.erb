@@ -83,29 +83,25 @@
 
 
         // SET EMPTY VALUES VECTOR ###########################
-        var objEmpty = {
-          id: 0,
-          iata: '',
-          month: '',
-          negocio: '',
-          revenue: 0,
-          cabina: '',
-          name: ''
-        };
+
 
         if(showAgency.length < 25){
+
           for(var i=1+showAgency.length; i < 25; i++){
-            objEmpty.iata = showAgency[0].iata;
-            showAgency[i] = objEmpty;
+            showAgency[i] = showAgency[0];
+            showAgency[i].id = 0;
+            showAgency[i].month = "";
+            showAgency[i].negocio = "";
+            showAgency[i].revenue = 0;
+            showAgency[i].cabina = "";
+            showAgency[i].name = "";
           }
+
         }
 
+        //for(var i=0; i < 25; i++){
         $log.log(showAgency);
-
-        for(var i=0; i < 25; i++){
-          $log.log(showAgency[i].iata);
-        }
-
+        //}
 
     }
 
