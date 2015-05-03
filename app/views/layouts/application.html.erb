@@ -34,7 +34,7 @@
         iataCount[0] = response[0].iata;
 
   			for(var i=0; i < response.length; i++){
-          myObjeto = response[i];
+
   				myArreglo[i] = response[i];
   				//console.log(response[i].iata);
 
@@ -55,10 +55,10 @@
 
           var k = 0;
           var valida ="";
-          console.log(myObjeto.iata);
-          /*
 
           for(i=0; i<= dataChart.length; i++){
+
+            console.log(dataChart[i])
 
             myObjeto = dataChart[i];
 
@@ -69,8 +69,8 @@
               k++;
             }
           }
-          console.log(showAgency);
-          */
+          //console.log(showAgency);
+
         }
 
         $scope.pedirValor = function(valor){
