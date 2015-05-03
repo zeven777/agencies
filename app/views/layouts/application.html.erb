@@ -15,11 +15,8 @@
 
   var app = angular.module("myApp", []);
 
-  var myArreglo = new Array();
   var datos = new Array();
   var iataCount = new Array();
-  var dataChart = new Array();
-  var vectorIata = new Array();
 
   app.controller("AgencyController", function($http, $scope, $q, $log){
   	var defered = $q.defer();
@@ -48,8 +45,6 @@
 
   		for(var i=0; i < data.length; i++){
 
-        vectorIata[i] = data[i].iata;
-				myArreglo[i] = data[i];
 
         if(iataCompare != data[i].iata){
           iataCompare = data[i].iata;
@@ -63,20 +58,23 @@
 
       function cargaAgencia(valor){
         var showAgency = new Array();
-        dataChart = data.slice();
         $scope.mundo = valor;
 
-      var k = 0;
+        var k = 0;
 
-      for(i=0; i<= dataChart.length; i++){
+        for(i=0; i<= data.length; i++){
 
-        if (valor == vectorIata[i]) {
-          showAgency[k] = dataChart[i];
-          k++;
+          if (valor == data[i].iata) {
+            showAgency[k] = data[i];
+            k++;
+          }
         }
-      }
 
-      console.log(showAgency);
+
+
+      for(var i=0; i<=showAgency.length; i++){
+        console.log(showAgency[i].iata);
+      }
 
     }
 
