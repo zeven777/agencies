@@ -18,6 +18,7 @@
   var datos = new Array();
   var iataCount = new Array();
   var vectorIata = new Array();
+  var myObjeto = {};
 
 
   app.controller("AgencyController", function($http, $scope, $q, $log){
@@ -79,10 +80,12 @@
           }
         }
 
-        $log.log(showAgency[0].iata);
+        var listAgency = new Array();
 
         for(var i=0; i<=showAgency.length; i++){
-          $log.log(showAgency[i].iata);
+          myObjeto = showAgency[i];
+          listAgency[i] = myObjeto;
+          $log.log(listAgency[i].iata);
         }
 
 
