@@ -18,6 +18,8 @@
   var iataCount = new Array();
   var dataChart = new Array();
   var vectorIata = new Array();
+  var fanObjeto = new object();
+  var coolArray = new Array();
 
   app.controller('AgencyController', function($scope, $http) {
   	$http.get("https://stormy-castle-4138.herokuapp.com/agencies.json").
@@ -34,6 +36,19 @@
         iataCount[0] = response[0].iata;
 
   			for(var i=0; i < response.length; i++){
+          fanObjeto = {
+            id: response.id,
+            iata: response.iata,
+            month:response.month,
+            year:response.year,
+            negocio:response.negocio,
+            revenue:response.revenue,
+            cabina:response.cabina,
+            name:response.name
+          };
+
+          coolArray[i] = fanObjeto;
+
           vectorIata[i] = response[i].iata;
   				myArreglo[i] = response[i];
   				//console.log(response[i].iata);
@@ -64,7 +79,7 @@
           }
 
 
-          console.log(showAgency);
+          console.log(coolArray);
 
         }
 
