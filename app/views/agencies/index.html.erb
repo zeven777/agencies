@@ -4,6 +4,42 @@
 <div class="container" ng-app="myApp" ng-controller="AgencyController">
   <p>{{mensaje}}</p>
   <br>
+
+
+  <!-- +++++++++++++++ Start display chart +++++++++++++++ -->
+
+  <h1 class="page-header">Display charts</h1>
+
+
+
+  <div id="chartsDiv" class="saveChart">
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="tagPie">
+          <h4 class="blueColor">Q1 YTD SALES</h4>
+          <h2 class="blueColor">${{}}</h2>
+
+          <h5 class="redColor">Q1 YTD GOAL</h5>
+          <h3 class="redColor">${{}}</h3>
+          </div>
+        <div id="chartpies"></div>
+        <div class="pietext">
+          <h2>${{}}</h2>
+          <h4>Q1 Goal</h4>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="title"><h4>Sales Comparison</h4></div>
+        <div id="chartdiv"></div>
+        <div id="chartyears"></div>
+      </div>
+    </div>
+  </div>
+  <!-- +++++++++++++++++++++++++++++ -->
+
+
+
   <h3>Agency list</h3>
   <ul>
     <li ng-repeat="x in linkAgency track by $index">
