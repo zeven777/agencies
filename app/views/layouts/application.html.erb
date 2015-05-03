@@ -18,7 +18,7 @@
   var iataCount = new Array();
   var dataChart = new Array();
   var vectorIata = new Array();
-  var fanObjeto = new object();
+  var fanObjeto = {};
   var coolArray = new Array();
 
   app.controller('AgencyController', function($scope, $http) {
@@ -27,8 +27,6 @@
   			$scope.months = response;
   			$scope.mensaje = response;
         $scope.mundo ="_";
-
-
 
 
         var iataCompare = response[0].iata;
