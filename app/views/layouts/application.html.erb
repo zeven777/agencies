@@ -64,7 +64,6 @@
         }
     	}
 
-      //console.log(iataCount);
       $scope.linkAgency = iataCount.slice();
 
       function cargaAgencia(valor, datos){
@@ -81,12 +80,27 @@
           }
         }
 
-        var listAgency = new Array();
+
+
+        // SET EMPTY VALUES VECTOR ###########################
+        var objEmpty = {
+          id: 0,
+          iata: '',
+          month: '',
+          negocio: '',
+          revenue: 0,
+          cabina: '',
+          name: ''
+        };
+
+        if(showAgency.length < 24){
+          for(var i=1+showAgency.length; i < 25; i++){
+            showAgency[i] = objEmpty;
+          }
+        }
 
         for(var i=0; i < 25; i++){
-          myObjeto = showAgency[i];
-          listAgency[i] = myObjeto;
-          $log.log(listAgency[i].iata);
+          $log.log(showAgency[i].iata);
         }
 
 
