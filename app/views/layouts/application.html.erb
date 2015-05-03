@@ -41,6 +41,8 @@
 
     // +++++++++++++++++++  START FUNCTION AFTER LOAD JSON +++++++++++++++++++++++++++++++
 
+    defered.resolve();
+
    	defered.promise.then(function(data){
    		$log.log("Promesa cumplida");
 
@@ -83,7 +85,7 @@
         var listAgency = new Array();
 
         var x = 0;
-        while (x < 25)
+        while (x < 25){
           myObjeto = showAgency[i];
           listAgency[i] = myObjeto;
           $log.log(listAgency[i].iata);
