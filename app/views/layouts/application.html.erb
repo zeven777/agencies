@@ -24,13 +24,19 @@
   	var defered = $q.defer();
     var promise = defered.promise;
 
-    $http.get('https://stormy-castle-4138.herokuapp.com/agencies.json')
-      .success(function(data) {
-        defered.resolve(data);
-  		})
-  		.error(function(err) {
-        defered.reject(err)
-      });
+
+    getAll();
+
+    function getAll () {
+      $http.get('https://stormy-castle-4138.herokuapp.com/agencies.json')
+        .success(function(data) {
+          defered.resolve(data);
+    		})
+    		.error(function(err) {
+          defered.reject(err)
+        });
+      return promise;
+    }
 
     // +++++++++++++++++++  START FUNCTION AFTER LOAD JSON +++++++++++++++++++++++++++++++
 
@@ -59,15 +65,6 @@
       //console.log(iataCount);
       $scope.linkAgency = iataCount.slice();
 
-
-
-
-    }
-
-    $scope.pedirValor = function(valor){
-      datos = data.slice();
-      cargaAgencia(valor, datos);
-
       function cargaAgencia(valor, datos){
         var showAgency = new Array();
         $scope.mundo = valor;
@@ -83,11 +80,17 @@
         }
 
         $log.log(showAgency[0].iata);
-        var veo = "";
+
         for(var i=0; i<=showAgency.length; i++){
-          veo = showAgency[i].iata;
-          $log.log(veo);
+          $log.log(showAgency[i].iata);
         }
+
+
+    }
+
+    $scope.pedirValor = function(valor){
+      datos = data.slice();
+      cargaAgencia(valor, datos);
     }
 
 
