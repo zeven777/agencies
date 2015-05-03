@@ -88,7 +88,7 @@
         if(showAgency.length < 25){
 
           for(var i=1+showAgency.length; i < 25; i++){
-            showAgency[i] = showAgency[0];
+            showAgency[i] = showAgency[0].slice();
             showAgency[i].id = 0;
             showAgency[i].month = "";
             showAgency[i].negocio = "";
