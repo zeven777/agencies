@@ -41,11 +41,7 @@
 
 
   <h3>Agency list</h3>
-  <ul>
-    <li ng-repeat="x in linkAgency track by $index">
-      <input type="button" class="btn btn-primary" value="{{x}}" ng-click="pedirValor(x)"/>
-    </li>
-  </ul>
+  <input ng-repeat="x in linkAgency track by $index" type="button" class="btn btn-primary" value="{{x}}" ng-click="pedirValor(x)"/>
 
   <h2>Aquí va el: {{mundo}}</h2>
 
