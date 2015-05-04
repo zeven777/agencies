@@ -150,7 +150,7 @@
 
       var iataCompare = data[0].iata;
       var t = 1;
-      iataCount[0] = data[0].name;
+      iataCount[0] = data[0].iata;
 
   		for(var i=0; i < data.length; i++){
 
@@ -158,7 +158,7 @@
 
         if(iataCompare != data[i].iata){
           iataCompare = data[i].iata;
-          iataCount[t] = data[i].name;
+          iataCount[t] = data[i].iata;
           t++;
         }
     	}
