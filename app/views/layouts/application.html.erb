@@ -112,6 +112,14 @@
       $scope.rLYLHFeb = 0;
       $scope.rLYLHMar = 0;
 
+      $scope.regJan = 0;
+      $scope.regFeb = 0;
+      $scope.regMar = 0;
+
+      $scope.rREGJan = 0;
+      $scope.rREGFeb = 0;
+      $scope.rREGMar = 0;
+
 
 
       var iataCompare = data[0].iata;
@@ -188,11 +196,15 @@
         var ayValue = new Array();
         var ayLH    = new Array();
         var lyLH    = new Array();
+        var ayREG   = new Array();
+        var ayREG   = new Array();
         for(var i = 0; i < monthConst; i++){
           lyValue[i] = 0;
           ayValue[i] = 0;
           ayLH[i]    = 0;
           lyLH[i]    = 0;
+          ayREG[i]   = 0;
+          lyREG[i]   = 0;
         }
 
         for(var i=0; i < showAgency.length; i++){
@@ -201,16 +213,22 @@
               lyValue[0] += parseFloat(showAgency[i].revenue);
               if(showAgency[i].negocio == "LH"){
                 lyLH[0]    += parseFloat(showAgency[i].revenue);
+              }else if (showAgency[i].negocio == "REG") {
+                lyREG[0] += parseFloat(showAgency[i].revenue);
               }
             } else if (showAgency[i].month == "Feb") {
               lyValue[1] += parseFloat(showAgency[i].revenue);
               if(showAgency[i].negocio == "LH"){
                 lyLH[1]    += parseFloat(showAgency[i].revenue);
+              }else if (showAgency[i].negocio == "REG") {
+                lyREG[1] += parseFloat(showAgency[i].revenue);
               }
             } else {
               lyValue[2] += parseFloat(showAgency[i].revenue);
               if(showAgency[i].negocio == "LH"){
                 lyLH[2]    += parseFloat(showAgency[i].revenue);
+              }else if (showAgency[i].negocio == "REG") {
+                lyREG[2] += parseFloat(showAgency[i].revenue);
               }
             }
 
@@ -219,17 +237,23 @@
               ayValue[0] += parseFloat(showAgency[i].revenue);
               if(showAgency[i].negocio == "LH"){
                 ayLH[0]    += parseFloat(showAgency[i].revenue);
+              }else if (showAgency[i].negocio == "REG") {
+                ayREG[0] += parseFloat(showAgency[i].revenue);
               }
 
             } else if (showAgency[i].month == "Feb") {
               ayValue[1] += parseFloat(showAgency[i].revenue);
               if(showAgency[i].negocio == "LH"){
                 ayLH[1]    += parseFloat(showAgency[i].revenue);
+              }else if (showAgency[i].negocio == "REG") {
+                ayREG[1] += parseFloat(showAgency[i].revenue);
               }
             } else {
               ayValue[2] += parseFloat(showAgency[i].revenue);
               if(showAgency[i].negocio == "LH"){
                 ayLH[2]    += parseFloat(showAgency[i].revenue);
+              }else if (showAgency[i].negocio == "REG") {
+                ayREG[2] += parseFloat(showAgency[i].revenue);
               }
             }
           }
@@ -273,6 +297,14 @@
         $scope.rLYLHJan = Math.round(((ayLH[0] / lyLH[0])-1)*100);
         $scope.rLYLHFeb = Math.round(((ayLH[1] / lyLH[1])-1)*100);
         $scope.rLYLHMar = Math.round(((ayLH[2] / lyLH[2])-1)*100);
+
+        $scope.regJan = agregarComas(ayREG[0]);
+        $scope.regFeb = agregarComas(ayREG[1]);
+        $scope.regMar = agregarComas(ayREG[2]);
+
+        $scope.rREGJan = Math.round(((ayREG[0] / lyREG[0])-1)*100);
+        $scope.rREGFeb = Math.round(((ayREG[1] / lyREG[1])-1)*100);
+        $scope.rREGMar = Math.round(((ayREG[2] / lyREG[2])-1)*100);
 
 
 
