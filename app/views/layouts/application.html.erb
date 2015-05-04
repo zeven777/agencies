@@ -80,8 +80,8 @@
    		$scope.months = data;
     	$scope.mensaje = data;
 
-      $scope.lyView = "";
-      $scope.ayView = "";
+      $scope.lyView = 0;
+      $scope.ayView = 0;
 
       var iataCompare = data[0].iata;
       var t = 1;
@@ -134,19 +134,37 @@
           $log.log(showAgency[i].iata);
         }
 
+
+        // ADD , NUMBERS  ++++++++++++++++++++++
+
+        function agregarComas(numero){
+        	numero += '';
+        	x = numero.split('.');
+        	x1 = x[0];
+        	x2 = x.length > 1 ? '.' + x[1] : '';
+        	var rgx = /(\d+)(\d{3})/;
+        	while (rgx.test(x1)) {
+        		x1 = x1.replace(rgx, '$1' + ',' + '$2');
+        	}
+        	return x1 + x2;
+        }
+
+
+
         // LOAD DATA ON TABLE ###########################
 
         var lyValue =0;
         var ayValue =0;
         for(var i=0; i < showAgency.length; i++){
           if(showAgency[i].year == "LY"){
-            lyValue = lyValue + showAgency[i].revenue;
+            lyValue = parseInt(lyValue) + parseInt(showAgency[i].revenue);
           }else {
-            ayValue = ayValue + showAgency[i].revenue;
+            ayValue = parseInt(ayValue) + parseInt(showAgency[i].revenue);
           }
         }
-        $scope.lyView = lyValue;
-        $scope.ayView = ayValue;
+        $scope.lyView = agregarComas(lyValue);
+        $scope.ayView = agregarComas(ayValue);
+
 
 
 
