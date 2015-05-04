@@ -108,6 +108,10 @@
       $scope.viewLHFeb = 0;
       $scope.viewLHMar = 0;
 
+      $scope.rLYLHJan = 0;
+      $scope.rLYLHFeb = 0;
+      $scope.rLYLHMar = 0;
+
 
 
       var iataCompare = data[0].iata;
@@ -251,9 +255,9 @@
         $scope.rLYFeb = Math.round(((ayValue[1] / lyValue[1])-1)*100);
         $scope.rLYMar = Math.round(((ayValue[2] / lyValue[2])-1)*100);
 
-        $scope.goalTabJan = agregarComas(Math.round(ayValue[0] * 1.05));
-        $scope.goalTabFeb = agregarComas(Math.round(ayValue[1] * 1.05));
-        $scope.goalTabMar = agregarComas(Math.round(ayValue[2] * 1.05));
+        $scope.goalTabJan = agregarComas(Math.round(lyValue[0] * 1.05));
+        $scope.goalTabFeb = agregarComas(Math.round(lyValue[1] * 1.05));
+        $scope.goalTabMar = agregarComas(Math.round(lyValue[2] * 1.05));
 
         datJan = Math.round(ayValue[0] * 1.05);
         datFeb = Math.round(ayValue[1] * 1.05);
@@ -265,6 +269,10 @@
         $scope.viewLHJan = agregarComas(ayLH[0]);
         $scope.viewLHFeb = agregarComas(ayLH[1]);
         $scope.viewLHMar = agregarComas(ayLH[2]);
+
+        $scope.rLYLHJan = Math.round(((ayLH[0] / lyLH[0])-1)*100);
+        $scope.rLYLHFeb = Math.round(((ayLH[1] / lyLH[1])-1)*100);
+        $scope.rLYLHMar = Math.round(((ayLH[2] / lyLH[2])-1)*100);
 
 
 
