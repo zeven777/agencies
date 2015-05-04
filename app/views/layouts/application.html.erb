@@ -120,6 +120,22 @@
       $scope.rREGFeb = 0;
       $scope.rREGMar = 0;
 
+      $scope.domJan = 0;
+      $scope.domFeb = 0;
+      $scope.domMar = 0;
+
+      $scope.rDOMJan = 0;
+      $scope.rDOMFeb = 0;
+      $scope.rDOMMar = 0;
+
+      $scope.otherJan = 0;
+      $scope.otherFeb = 0;
+      $scope.otherMar = 0;
+
+      $scope.rOTHERJan = 0;
+      $scope.rOTHERFeb = 0;
+      $scope.rOTHERMar = 0;
+
 
 
       var iataCompare = data[0].iata;
@@ -198,6 +214,10 @@
         var lyLH    = new Array();
         var ayREG   = new Array();
         var lyREG   = new Array();
+        var ayDOM   = new Array();
+        var lyDOM   = new Array();
+        var ayOTHER = new Array();
+        var lyOTHER = new Array();
         for(var i = 0; i < monthConst; i++){
           lyValue[i] = 0;
           ayValue[i] = 0;
@@ -205,6 +225,10 @@
           lyLH[i]    = 0;
           ayREG[i]   = 0;
           lyREG[i]   = 0;
+          ayDOM      = 0;
+          lyDOM      = 0;
+          ayOTHER    = 0;
+          lyOTHER    = 0;
         }
 
         for(var i=0; i < showAgency.length; i++){
@@ -215,21 +239,38 @@
                 lyLH[0]    += parseFloat(showAgency[i].revenue);
               }else if (showAgency[i].negocio == "REG") {
                 lyREG[0] += parseFloat(showAgency[i].revenue);
+              }else if (showAgency[i].negocio == "DOM") {
+                lyDOM[0] += parseFloat(showAgency[i].revenue);
+              }else if (showAgency[i].negocio == "OTHERS") {
+                lyOTHER[0] += parseFloat(showAgency[i].revenue);
               }
+
+
             } else if (showAgency[i].month == "Feb") {
               lyValue[1] += parseFloat(showAgency[i].revenue);
               if(showAgency[i].negocio == "LH"){
                 lyLH[1]    += parseFloat(showAgency[i].revenue);
               }else if (showAgency[i].negocio == "REG") {
                 lyREG[1] += parseFloat(showAgency[i].revenue);
+              }else if (showAgency[i].negocio == "DOM") {
+                lyDOM[1] += parseFloat(showAgency[i].revenue);
+              }else if (showAgency[i].negocio == "OTHERS") {
+                lyOTHER[1] += parseFloat(showAgency[i].revenue);
               }
+
+
             } else {
               lyValue[2] += parseFloat(showAgency[i].revenue);
               if(showAgency[i].negocio == "LH"){
                 lyLH[2]    += parseFloat(showAgency[i].revenue);
               }else if (showAgency[i].negocio == "REG") {
                 lyREG[2] += parseFloat(showAgency[i].revenue);
+              }else if (showAgency[i].negocio == "DOM") {
+                lyDOM[2] += parseFloat(showAgency[i].revenue);
+              }else if (showAgency[i].negocio == "OTHERS") {
+                lyOTHER[2] += parseFloat(showAgency[i].revenue);
               }
+
             }
 
           }else {
@@ -239,7 +280,13 @@
                 ayLH[0]    += parseFloat(showAgency[i].revenue);
               }else if (showAgency[i].negocio == "REG") {
                 ayREG[0] += parseFloat(showAgency[i].revenue);
+              }else if (showAgency[i].negocio == "DOM") {
+                ayDOM[0] += parseFloat(showAgency[i].revenue);
+              }else if (showAgency[i].negocio == "OTHERS") {
+                ayOTHER[0] += parseFloat(showAgency[i].revenue);
               }
+
+
 
             } else if (showAgency[i].month == "Feb") {
               ayValue[1] += parseFloat(showAgency[i].revenue);
@@ -247,13 +294,24 @@
                 ayLH[1]    += parseFloat(showAgency[i].revenue);
               }else if (showAgency[i].negocio == "REG") {
                 ayREG[1] += parseFloat(showAgency[i].revenue);
+              }else if (showAgency[i].negocio == "DOM") {
+                ayDOM[1] += parseFloat(showAgency[i].revenue);
+              }else if (showAgency[i].negocio == "OTHERS") {
+                ayOTHER[1] += parseFloat(showAgency[i].revenue);
               }
+
+
+
             } else {
               ayValue[2] += parseFloat(showAgency[i].revenue);
               if(showAgency[i].negocio == "LH"){
                 ayLH[2]    += parseFloat(showAgency[i].revenue);
               }else if (showAgency[i].negocio == "REG") {
                 ayREG[2] += parseFloat(showAgency[i].revenue);
+              }else if (showAgency[i].negocio == "DOM") {
+                ayDOM[2] += parseFloat(showAgency[i].revenue);
+              }else if (showAgency[i].negocio == "OTHERS") {
+                ayOTHER[2] += parseFloat(showAgency[i].revenue);
               }
             }
           }
@@ -306,9 +364,21 @@
         $scope.rREGFeb = Math.round(((ayREG[1] / lyREG[1])-1)*100);
         $scope.rREGMar = Math.round(((ayREG[2] / lyREG[2])-1)*100);
 
+        $scope.domJan = agregarComas(ayDOM[0]);
+        $scope.domFeb = agregarComas(ayDOM[1]);
+        $scope.domMar = agregarComas(ayDOM[2]);
 
+        $scope.rDOMJan = Math.round(((ayDOM[0] / lyDOM[0])-1)*100);
+        $scope.rDOMFeb = Math.round(((ayDOM[1] / lyDOM[1])-1)*100);
+        $scope.rDOMMar = Math.round(((ayDOM[2] / lyDOM[2])-1)*100);
 
+        $scope.otherJan = agregarComas(ayOTHER[0]);
+        $scope.otherFeb = agregarComas(ayOTHER[1]);
+        $scope.otherMar = agregarComas(ayOTHER[2]);
 
+        $scope.rOTHERJan = Math.round(((ayOTHER[0] / lyOTHER[0])-1)*100);
+        $scope.rOTHERFeb = Math.round(((ayOTHER[1] / lyOTHER[1])-1)*100);
+        $scope.rOTHERMar = Math.round(((ayOTHER[2] / lyOTHER[2])-1)*100);
 
 
 
