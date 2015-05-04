@@ -62,7 +62,7 @@
     getAll();
 
     function getAll () {
-      $http.get('https://stormy-castle-4138.herokuapp.com/agencies.json')
+      $http.get('https://localhost:3000/agencies.json')
         .success(function(data) {
           defered.resolve(data);
     		})
