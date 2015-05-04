@@ -170,6 +170,9 @@
       function cargaAgencia(valor, datos){
         var showAgency = new Array();
         var k = 0;
+        var pie3New = $scope.pie3;
+        var pie4New = $scope.pie4;
+        var pie5New = $scope.pie5;
 
         for(i=0; i<= datos.length; i++){
 
@@ -412,7 +415,10 @@
         for(var i=1; i<6; i++){
           pies[i] = eval("$scope.pie"+ i);
         }
-        $scope.agregarComas(pie3);
+        $scope.pie3 = agregarComas(pie3New);
+        $scope.pie4 = agregarComas(pie4New);
+        $scope.pie5 = agregarComas(pie5New);
+
         greyResult = 100 - (parseInt(pies[1]) + parseInt(pies[2]));
 
         AmCharts.makeChart("chartpies",
