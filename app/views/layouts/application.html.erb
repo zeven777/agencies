@@ -100,6 +100,10 @@
       $scope.goalTabFeb = 0;
       $scope.goalTabMar = 0;
 
+      $scope.rgoalTabJan = 0;
+      $scope.rgoalTabFeb = 0;
+      $scope.rgoalTabMar = 0;
+
 
 
       var iataCompare = data[0].iata;
@@ -218,6 +222,10 @@
         $scope.goalTabJan = agregarComas(parseFloat(ayValue[0]) * 1.05);
         $scope.goalTabFeb = agregarComas(parseFloat(ayValue[1]) * 1.05);
         $scope.goalTabMar = agregarComas(parseFloat(ayValue[2]) * 1.05);
+
+        $scope.rgoalTabJan = Math.round(((parseFloat(ayValue[0]) / $scope.goalTabJan)-1)*100);
+        $scope.rgoalTabFeb = Math.round(((parseFloat(ayValue[1]) / $scope.goalTabFeb)-1)*100);
+        $scope.rgoalTabMar = Math.round(((parseFloat(ayValue[2]) / $scope.goalTabMar)-1)*100);
 
 
 
