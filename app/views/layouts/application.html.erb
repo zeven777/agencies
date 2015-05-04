@@ -88,6 +88,10 @@
       $scope.lyViewMar = 0;
       $scope.ayViewMar = 0;
 
+      $scope.usDollarJan = 0;
+      $scope.usDollarFeb = 0;
+      $scope.usDollarMar = 0;
+
 
 
 
@@ -195,6 +199,10 @@
         $scope.ayViewFeb = agregarComas(ayValue[1]);
         $scope.lyViewMar = agregarComas(lyValue[2]);
         $scope.ayViewMar = agregarComas(ayValue[2]);
+
+        $scope.usDollarJan = agregarComas(ayValue[0]) - agregarComas(lyValue[0]);
+        $scope.usDollarFeb = agregarComas(ayValue[1]) - agregarComas(lyValue[1]);
+        $scope.usDollarMar = agregarComas(ayValue[2]) - agregarComas(lyValue[2]);
 
 
 
