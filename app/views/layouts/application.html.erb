@@ -21,6 +21,10 @@
   var myObjeto = {};
   const regCount = 48;
   const monthConst = 3;
+  var greyResult = 0;
+  var pies       = new Array();
+
+
 
 
   // +++++++++++++++++++++++++++++
@@ -136,6 +140,12 @@
       $scope.rOTHERFeb = 0;
       $scope.rOTHERMar = 0;
 
+
+
+
+      for(var i = 1; i < 6; i++){
+        eval("$scope.pie"+ i +"= 0");
+      }
 
 
       var iataCompare = data[0].iata;
@@ -396,58 +406,59 @@
         // +++++++++ BEGIN FUNCTION PIE +++++++++ //
 
 
-          /*  ///// CODE FOR LOAD DATA IN PIE
 
-          for(var i=1; i<6; i++){
-            pies[i] = eval("$scope.pie"+ i);
-          }
+        for(var i=1; i<6; i++){
+          pies[i] = eval("$scope.pie"+ i);
+        }
+        $scope.pie3;
+        greyResult = 100 - (parseInt(pies[1]) + parseInt(pies[2]));
 
-          greyResult = 100 - (parseInt(pies[1]) + parseInt(pies[2]));
-          */
-
-          $scope.goalPieTotal = 100000;
-          $scope.goalPieSale = 28600;
-          $scope.goalPie = 30000;
-
-          AmCharts.makeChart("chartpies",
-          {
-            "type": "pie",
-            "pathToImages": "http://cdn.amcharts.com/lib/3/images/",
-            "balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
-            "innerRadius": 80,
-            "labelText": "[[value]] %",
-            "minRadius": 120,
-            "startRadius": "100%",
-
-            "colors": [
-              "#003d7d",
-              "#bb282e",
-              "#4d4d4d"
-            ],
-            "pullOutDuration": 0,
-            "startDuration": 0,
-            "titleField": "country",
-            "valueField": "litres",
-            "fontSize": 12,
-            "theme": "default",
-            "allLabels": [],
-            "balloon": {},
-            "titles": [],
-            "dataProvider": [
-              {
-                "country": 28600,
-                "litres": 28
-              },
-              {
-                "country": 30000,
-                "litres": 30
-              },
-              {
-                "country": 60,
-                "litres": 60
-              }
-            ]
-          });
+        AmCharts.makeChart("chartpies",
+        {
+          "type": "pie",
+          "balloonText": "[[title]]<br><span style='font-size:14px'><b>[[value]]</b> ([[percents]]%)</span>",
+          "innerRadius": 80,
+          "labelText": "[[value]] %",
+          "minRadius": 120,
+          "startRadius": "100%",
+          /*
+          "exportConfig":{
+            "menuTop":"20px",
+                "menuRight":"20px",
+                "menuItems": [{
+                "icon": './img/export.png',
+                "format": 'png'
+                }]
+          },*/
+          "colors": [
+            "#003d7d",
+            "#bb282e",
+            "#4d4d4d"
+          ],
+          "pullOutDuration": 0,
+          "startDuration": 0,
+          "titleField": "country",
+          "valueField": "litres",
+          "fontSize": 12,
+          "theme": "default",
+          "allLabels": [],
+          "balloon": {},
+          "titles": [],
+          "dataProvider": [
+            {
+              "country": pies[3],
+              "litres": pies[1]
+            },
+            {
+              "country": pies[4],
+              "litres": pies[2]
+            },
+            {
+              "country": greyResult,
+              "litres": greyResult
+            }
+          ]
+        });
         // +++++++++ END FUNCTION PIE +++++++++ //
 
 
