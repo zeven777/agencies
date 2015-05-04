@@ -80,8 +80,15 @@
    		$scope.months = data;
     	$scope.mensaje = data;
 
-      $scope.lyView = 0;
-      $scope.ayView = 0;
+      $scope.lyViewJan = 0;
+      $scope.ayViewJan = 0;
+      $scope.lyViewFeb = 0;
+      $scope.ayViewFeb = 0;
+      $scope.lyViewMar = 0;
+      $scope.ayViewMar = 0;
+
+
+
 
       var iataCompare = data[0].iata;
       var t = 1;
@@ -153,17 +160,36 @@
 
         // LOAD DATA ON TABLE ###########################
 
-        var lyValue =0;
-        var ayValue =0;
+        var lyValue = new Array();
+        var ayValue = new Array();
+
         for(var i=0; i < showAgency.length; i++){
           if(showAgency[i].year == "LY"){
-            lyValue = parseFloat(lyValue) + parseFloat(showAgency[i].revenue);
+            if (showAgency[i].month == "Jan") {
+              lyValue[0] += parseFloat(showAgency[i].revenue);
+            } else if (showAgency[i].month == "Feb") {
+              lyValue[1] += parseFloat(showAgency[i].revenue);
+            } else {
+              lyValue[2] += parseFloat(showAgency[i].revenue);
+            }
+
           }else {
-            ayValue = parseFloat(ayValue) + parseFloat(showAgency[i].revenue);
+            if (showAgency[i].month == "Jan") {
+              ayValue[0] += parseFloat(showAgency[i].revenue);
+            } else if (showAgency[i].month == "Feb") {
+              ayValue[1] += parseFloat(showAgency[i].revenue);
+            } else {
+              ayValue[2] += parseFloat(showAgency[i].revenue);
+            }
           }
         }
-        $scope.lyView = agregarComas(lyValue);
-        $scope.ayView = agregarComas(ayValue);
+
+        $scope.lyViewJan = agregarComas(lyValue[0]);
+        $scope.ayViewJan = agregarComas(ayValue[0]);
+        $scope.lyViewFeb = agregarComas(lyValue[1]);
+        $scope.ayViewFeb = agregarComas(ayValue[1]);
+        $scope.lyViewMar = agregarComas(lyValue[2]);
+        $scope.ayViewMar = agregarComas(ayValue[2]);
 
 
 
