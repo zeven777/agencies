@@ -36,6 +36,7 @@
   <div class="container-fluid">
     <form class="form-inline">
       <input ng-repeat="x in linkAgency track by $index" type="button" class="btn btn-primary btMar" value="{{x}}" ng-click="pedirValor(x)"/>
+      <button ng-repeat="y in linkAgency track by $index" type="button" class="btn btn-success" value="{{y}}" ng-click="pedirValor(y)">Success</button>
     </form>
   </div>
 
