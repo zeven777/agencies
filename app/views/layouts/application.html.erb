@@ -157,9 +157,9 @@
         var ayValue =0;
         for(var i=0; i < showAgency.length; i++){
           if(showAgency[i].year == "LY"){
-            lyValue = parseInt(lyValue) + parseInt(showAgency[i].revenue);
+            lyValue = parseFloat(lyValue) + parseFloat(showAgency[i].revenue);
           }else {
-            ayValue = parseInt(ayValue) + parseInt(showAgency[i].revenue);
+            ayValue = parseFloat(ayValue) + parseFloat(showAgency[i].revenue);
           }
         }
         $scope.lyView = agregarComas(lyValue);
