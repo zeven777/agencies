@@ -341,9 +341,9 @@
         $scope.goalTabFeb = agregarComas(Math.round(lyValue[1] * 1.05));
         $scope.goalTabMar = agregarComas(Math.round(lyValue[2] * 1.05));
 
-        datJan = Math.round(ayValue[0] * 1.05);
-        datFeb = Math.round(ayValue[1] * 1.05);
-        datMar = Math.round(ayValue[2] * 1.05);
+        datJan = Math.round(lyValue[0] * 1.05);
+        datFeb = Math.round(lyValue[1] * 1.05);
+        datMar = Math.round(lyValue[2] * 1.05);
         $scope.rgoalTabJan = Math.round(((ayValue[0] / datJan)-1)*100);
         $scope.rgoalTabFeb = Math.round(((ayValue[1] / datFeb)-1)*100);
         $scope.rgoalTabMar = Math.round(((ayValue[2] / datMar)-1)*100);
