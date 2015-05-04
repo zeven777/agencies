@@ -204,6 +204,11 @@
           }
         }
 
+        // VARS VOLATILS
+        var datJan = 0;
+        var datFeb = 0;
+        var datMar = 0;
+
         $scope.lyViewJan = agregarComas(lyValue[0]);
         $scope.ayViewJan = agregarComas(ayValue[0]);
         $scope.lyViewFeb = agregarComas(lyValue[1]);
@@ -219,13 +224,16 @@
         $scope.rLYFeb = Math.round(((parseFloat(ayValue[1]) / parseFloat(lyValue[1]))-1)*100);
         $scope.rLYMar = Math.round(((parseFloat(ayValue[2]) / parseFloat(lyValue[2]))-1)*100);
 
-        $scope.goalTabJan = agregarComas(parseFloat(ayValue[0]) * 1.05);
-        $scope.goalTabFeb = agregarComas(parseFloat(ayValue[1]) * 1.05);
-        $scope.goalTabMar = agregarComas(parseFloat(ayValue[2]) * 1.05);
+        $scope.goalTabJan = agregarComas(Math.round(parseFloat(ayValue[0]) * 1.05));
+        $scope.goalTabFeb = agregarComas(Math.round(parseFloat(ayValue[1]) * 1.05));
+        $scope.goalTabMar = agregarComas(Math.round(parseFloat(ayValue[2]) * 1.05));
 
-        $scope.rgoalTabJan = Math.round(((parseFloat(ayValue[0]) / $scope.goalTabJan)-1)*100);
-        $scope.rgoalTabFeb = Math.round(((parseFloat(ayValue[1]) / $scope.goalTabFeb)-1)*100);
-        $scope.rgoalTabMar = Math.round(((parseFloat(ayValue[2]) / $scope.goalTabMar)-1)*100);
+        datJan = Math.round(parseFloat(ayValue[0]) * 1.05);
+        datFeb = Math.round(parseFloat(ayValue[1]) * 1.05);
+        datMar = Math.round(parseFloat(ayValue[2]) * 1.05);
+        $scope.rgoalTabJan = Math.round(((parseFloat(ayValue[0]) / datJan)-1)*100);
+        $scope.rgoalTabFeb = Math.round(((parseFloat(ayValue[1]) / datFeb)-1)*100);
+        $scope.rgoalTabMar = Math.round(((parseFloat(ayValue[2]) / datMar)-1)*100);
 
 
 
