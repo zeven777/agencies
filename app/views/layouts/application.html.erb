@@ -20,6 +20,7 @@
   var vectorIata = new Array();
   var myObjeto = {};
   const regCount = 48;
+  const monthConst = 3;
 
 
   // +++++++++++++++++++++++++++++
@@ -162,6 +163,10 @@
 
         var lyValue = new Array();
         var ayValue = new Array();
+        for(var i = 0; i < monthConst; i++){
+          lyValue[i] = 0;
+          ayValue[i] = 0;
+        }
 
         for(var i=0; i < showAgency.length; i++){
           if(showAgency[i].year == "LY"){
