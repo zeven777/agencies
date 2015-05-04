@@ -92,6 +92,9 @@
       $scope.usDollarFeb = 0;
       $scope.usDollarMar = 0;
 
+      $scope.rLYJan = 0;
+      $scope.rLYFeb = 0;
+      $scope.rLYMar = 0;
 
 
 
@@ -200,9 +203,15 @@
         $scope.lyViewMar = agregarComas(lyValue[2]);
         $scope.ayViewMar = agregarComas(ayValue[2]);
 
-        $scope.usDollarJan = agregarComas(parseFloat(ayValue[0] - parseFloat(lyValue[0]));
-        $scope.usDollarFeb = agregarComas(parseFloat(ayValue[1] - parseFloat(lyValue[1]));
-        $scope.usDollarMar = agregarComas(parseFloat(ayValue[2] - parseFloat(lyValue[2]));
+        $scope.usDollarJan = agregarComas(parseFloat(ayValue[0]) - parseFloat(lyValue[0]));
+        $scope.usDollarFeb = agregarComas(parseFloat(ayValue[1]) - parseFloat(lyValue[1]));
+        $scope.usDollarMar = agregarComas(parseFloat(ayValue[2]) - parseFloat(lyValue[2]));
+
+        $scope.rLYJan = Math.round(((parseFloat(ayValue[0]) / parseFloat(lyValue[0]))-1)*100);
+        $scope.rLYFeb = Math.round(((parseFloat(ayValue[1]) / parseFloat(lyValue[1]))-1)*100);
+        $scope.rLYMar = Math.round(((parseFloat(ayValue[2]) / parseFloat(lyValue[2]))-1)*100);
+
+
 
 
 
