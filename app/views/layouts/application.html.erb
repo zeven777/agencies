@@ -104,6 +104,10 @@
       $scope.rgoalTabFeb = 0;
       $scope.rgoalTabMar = 0;
 
+      $scope.viewLHJan = 0;
+      $scope.viewLHFeb = 0;
+      $scope.viewLHMar = 0;
+
 
 
       var iataCompare = data[0].iata;
@@ -178,28 +182,38 @@
 
         var lyValue = new Array();
         var ayValue = new Array();
+        var ayLH    = new Array();
+        var lyLH    = new Array();
         for(var i = 0; i < monthConst; i++){
           lyValue[i] = 0;
           ayValue[i] = 0;
+          ayLH[i]    = 0;
+          lyLH[i]    = 0;
         }
 
         for(var i=0; i < showAgency.length; i++){
           if(showAgency[i].year == "LY"){
             if (showAgency[i].month == "Jan") {
               lyValue[0] += parseFloat(showAgency[i].revenue);
+              lyLH[0]    += parseFloat(showAgency[i].revenue);
             } else if (showAgency[i].month == "Feb") {
               lyValue[1] += parseFloat(showAgency[i].revenue);
+              lyLH[1]    += parseFloat(showAgency[i].revenue);
             } else {
               lyValue[2] += parseFloat(showAgency[i].revenue);
+              lyLH[2]    += parseFloat(showAgency[i].revenue);
             }
 
           }else {
             if (showAgency[i].month == "Jan") {
               ayValue[0] += parseFloat(showAgency[i].revenue);
+              ayLH[0]    += parseFloat(showAgency[i].revenue);
             } else if (showAgency[i].month == "Feb") {
               ayValue[1] += parseFloat(showAgency[i].revenue);
+              ayLH[1]    += parseFloat(showAgency[i].revenue);
             } else {
               ayValue[2] += parseFloat(showAgency[i].revenue);
+              ayLH[2]    += parseFloat(showAgency[i].revenue);
             }
           }
         }
@@ -216,25 +230,31 @@
         $scope.lyViewMar = agregarComas(lyValue[2]);
         $scope.ayViewMar = agregarComas(ayValue[2]);
 
-        $scope.usDollarJan = agregarComas(parseFloat(ayValue[0]) - parseFloat(lyValue[0]));
-        $scope.usDollarFeb = agregarComas(parseFloat(ayValue[1]) - parseFloat(lyValue[1]));
-        $scope.usDollarMar = agregarComas(parseFloat(ayValue[2]) - parseFloat(lyValue[2]));
+        $scope.usDollarJan = agregarComas(ayValue[0] - lyValue[0]);
+        $scope.usDollarFeb = agregarComas(ayValue[1] - lyValue[1]);
+        $scope.usDollarMar = agregarComas(ayValue[2] - lyValue[2]);
 
-        $scope.rLYJan = Math.round(((parseFloat(ayValue[0]) / parseFloat(lyValue[0]))-1)*100);
-        $scope.rLYFeb = Math.round(((parseFloat(ayValue[1]) / parseFloat(lyValue[1]))-1)*100);
-        $scope.rLYMar = Math.round(((parseFloat(ayValue[2]) / parseFloat(lyValue[2]))-1)*100);
+        $scope.rLYJan = Math.round(((ayValue[0] / lyValue[0])-1)*100);
+        $scope.rLYFeb = Math.round(((ayValue[1] / lyValue[1])-1)*100);
+        $scope.rLYMar = Math.round(((ayValue[2] / lyValue[2])-1)*100);
 
-        $scope.goalTabJan = agregarComas(Math.round(parseFloat(ayValue[0]) * 1.05));
-        $scope.goalTabFeb = agregarComas(Math.round(parseFloat(ayValue[1]) * 1.05));
-        $scope.goalTabMar = agregarComas(Math.round(parseFloat(ayValue[2]) * 1.05));
+        $scope.goalTabJan = agregarComas(Math.round(ayValue[0] * 1.05));
+        $scope.goalTabFeb = agregarComas(Math.round(ayValue[1] * 1.05));
+        $scope.goalTabMar = agregarComas(Math.round(ayValue[2] * 1.05));
 
-        datJan = Math.round(parseFloat(ayValue[0]) * 1.05);
-        datFeb = Math.round(parseFloat(ayValue[1]) * 1.05);
-        datMar = Math.round(parseFloat(ayValue[2]) * 1.05);
-        $scope.rgoalTabJan = Math.round(((parseFloat(ayValue[0]) / datJan)-1)*100);
-        $scope.rgoalTabFeb = Math.round(((parseFloat(ayValue[1]) / datFeb)-1)*100);
-        $scope.rgoalTabMar = Math.round(((parseFloat(ayValue[2]) / datMar)-1)*100);
-        
+        datJan = Math.round(ayValue[0] * 1.05);
+        datFeb = Math.round(ayValue[1] * 1.05);
+        datMar = Math.round(ayValue[2] * 1.05);
+        $scope.rgoalTabJan = Math.round(((ayValue[0] / datJan)-1)*100);
+        $scope.rgoalTabFeb = Math.round(((ayValue[1] / datFeb)-1)*100);
+        $scope.rgoalTabMar = Math.round(((ayValue[2] / datMar)-1)*100);
+
+        $scope.viewLHJan = ayLH[0];
+        $scope.viewLHFeb = ayLH[1];
+        $scope.viewLHMar = ayLH[2];
+
+
+
 
 
 
