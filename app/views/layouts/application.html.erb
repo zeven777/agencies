@@ -459,27 +459,80 @@
           }
           */
 
+          var lyEconomy = 0;
+          var ayEconomy = 0;
+          var lyPremium = 0;
+          var ayPremium = 0;
+
+          var lydataEco =0;
+          var lydataPre =0;
+          var aydataEco =0;
+          var aydataPre =0;
+
+          var lytotal =0;
+          var aytotal =0;
+
+          var economyGoal = 0;
+          var premiumGoal = 0;
+          var premiumEconomyGoal = 0;
+
+
+
+          for(var i=0; i < showAgency.length; i++){
+            if(showAgency[i].year == "LY"){
+              if (showAgency[i].cabina == "Economy") {
+                lyEconomy += parseFloat(showAgency[i].revenue);
+              }else{
+                lyPremium += parseFloat(showAgency[i].revenue);
+              }
+
+            }else{
+              if (showAgency[i].cabina == "Economy") {
+                ayEconomy += parseFloat(showAgency[i].revenue);
+              }else{
+                ayPremium += parseFloat(showAgency[i].revenue);
+              }
+            }
+          }
+
+          lydataEco = Math.round(lyEconomy * 1.05);
+          lydataPre = Math.round(lyPremium * 1.05);
+          lytotal   = Math.round(lyPremium * 1.05) + Math.round(lyEconomy * 1.05);
+
+          aydataEco = Math.round(ayEconomy * 1.05);
+          aydataPre = Math.round(ayPremium * 1.05);
+          aytotal   = Math.round(ayPremium * 1.05) + Math.round(ayEconomy * 1.05);
+
+
+          economyGoal = Math.round((lyEconomy + ayEconomy)*1.05);
+          premiumGoal = Math.round((lyPremium + ayPremium)*1.05);
+          premiumEconomyGoal = economyGoal + premiumGoal;
+
+
+
+
+
           var chart = AmCharts.makeChart("chartdiv", {
             "type": "serial",
           	"theme": "light",
 
               "dataProvider": [{
-                  "title": "GOAL <br>$" + 627481,
-                  "economy": 237659,
+                  "title": "GOAL <br>$" + premiumEconomyGoal,
+                  "economy": economyGoal,
                   "color": "#003d7d",
-                  "premium": 389882,
+                  "premium": premiumGoal,
                   "colorD": "#006dab"
               }, {
-                  "title": "2015 <br>$"+ 627481,
-                  "economy": 242659,
+                  "title": "2015 <br>$"+ aytotal,
+                  "economy": aydataEco,
                   "color": "#003d7d",
-                  "premium": 384882,
+                  "premium": aydataPre,
                   "colorD": "#006dab"
               }, {
-                  "title": "2014 <br>$"+ 732065,
-                  "economy": 320726,
+                  "title": "2014 <br>$"+ lytotal,
+                  "economy": lydataEco,
                   "color": "#003d7d",
-                  "premium": 441338,
+                  "premium": lydataPre,
                   "colorD": "#006dab"
               }],
               "valueAxes": [{
