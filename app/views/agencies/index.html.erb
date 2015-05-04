@@ -1,6 +1,41 @@
 <div class="container" ng-app="myApp" ng-controller="AgencyController">
 
   <h3>Agency list</h3>
+
+  <div class="row">
+    <h1>Input Data</h1>
+    <h2>Pie values:</h2>
+    <div class="form-inline">
+      <div class="form-group">
+        <label>Q1 YTD SALES %</label>
+        <input type="text" class="form-control" ng-model="pie1" />
+      </div>
+      <div class="form-group">
+        <label>Q1 YTD GOAL %</label>
+        <input type="text" class="form-control" ng-model="pie2" />
+      </div>
+    </div>
+    <br/>
+    <div class="form-inline">
+      <div class="form-group">
+        <label>Q1 YTD SALES</label>
+        <input type="text" class="form-control" ng-model="pie3" />
+      </div>
+      <div class="form-group">
+        <label>Q1 YTD GOAL</label>
+        <input type="text" class="form-control" ng-model="pie4" />
+      </div>
+      <label>Q1 GOAL</label>
+      <div class="form-group">
+        <input type="text" class="form-control" ng-model="pie5" />
+      </div>
+    </div>
+    <br/>
+
+    <input type="button" class="btn btn-primary" value="Send Pie values" ng-click="pieValores()"/>
+  </div>
+  <br/>
+
   <div class="container-fluid">
     <form class="form-inline">
       <input ng-repeat="x in linkAgency track by $index" type="button" class="btn btn-primary btMar" value="{{x}}" ng-click="pedirValor(x)"/>
