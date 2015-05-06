@@ -23,6 +23,7 @@
   const monthConst = 3;
   var greyResult = 0;
   var pies       = new Array();
+  var linksValidos = new Array();
 
 
 
@@ -165,7 +166,27 @@
 
 
 
-      $scope.linkAgency = iataCount.slice();
+      var existe = 0;
+      var cuenta = 0;
+
+      for(var i = 0; i < iataCount.length; i++){
+        existe = 0;
+        for(var x = 0; x < linksValidos.length; x++){
+          if(linksValidos[x] == iataCount[i]){
+            existe = 1;
+          }
+        }
+        if(existe != 1){
+          linksValidos[cuenta] = iataCount[k];
+          existe = 0;
+          cuenta++;
+        }
+      }
+
+
+      //$scope.linkAgency = iataCount.slice();
+      $log.log(linksValidos);
+      $scope.linkAgency = linksValidos.slice();
 
       function cargaAgencia(valor, datos){
         var showAgency = new Array();
